@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
 
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -8,62 +9,93 @@
 
 body {
 	font-family: 'Lato', sans-serif;
-	/* color: #222; */
-	padding-bottom: 50px;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-/* @todo Nav*/
-
-.hero {
-	background-image: url(fondo.webp);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: bottom center;
 	height: 100vh;
-	color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	position: relative;
-	margin-bottom: 20px;
-	z-index: -2;
 }
 
-.hero::before {
-	content: '';
+.slider-container {
+	position: relative;
+	overflow: hidden;
+	width: 100vh;
+	height: 100vh;
+}
+
+.left-slide {
+	height: 100%;
+	width: 35%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+}
+
+.left-slide > div {
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
-	z-index: -1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
 }
 
-.hero h1 {
-	font-size: 46px;
-	margin: -20px 0 20px;
+.left-slide h1 {
+	font-size: 40px;
+	margin-bottom: 10px;
+	margin-top: -30px;
 }
 
-.hero p {
-	font-size: 20px;
-	letter-spacing: 1px;
+.left-slide p {
+	margin: 0 30px;
+	text-align: center;
 }
 
-.content h2,
-.content h3 {
-	font-size: 150%;
-	margin: 20px 0px;
+.right-slide {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 35%;
+	width: 65%;
 }
 
-.content p {
-	color: #555;
-	line-height: 30px;
-	letter-spacing: 1.2px;
+.right-slide > div {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 100%;
+	width: 100%;
+}
+
+button {
+	background-color: #fff;
+	border: none;
+	color: #aaa;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 15px;
+}
+
+button:hover {
+	color: #222;
+}
+
+button:focus {
+	outline: none;
+}
+
+.slider-container .action-buttons button {
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	z-index: 100;
+}
+
+.slider-container .action-buttons .down-button {
+	transform: translateX(-100%);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+	transform: translateY(-100%);
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
