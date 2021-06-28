@@ -45,9 +45,19 @@ body {
 }
 
 .left-slide p {
-	margin: 0 30px;
+	margin: 0 50px;
 	text-align: center;
+	font-size: 20px;
 }
+
+.left-slide div:nth-child(4) {	
+	color: #000;	
+}
+
+.left-slide div:nth-child(5) {	
+	color: #000;	
+}
+
 
 .right-slide {
 	height: 100%;
